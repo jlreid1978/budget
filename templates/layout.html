@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set up bootstrap and css styling, as well as overall page formatting -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Helper</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-bank' viewBox='0 0 16 16'><path d='m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z'/></svg>">
+    <style>
+        .btn-margin {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Populates header selection based on if a user is logged in -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-6 text-center text-md-left">
+                    <a href="/budget-home"><h1>Budget Helper</h1></a>
+                    <a href="/">Title Page</a>
+                </div>
+                <div class="col-12 col-md-6 text-center text-md-right">
+                    {% if logged_in %}
+                        <a href="/view" class="btn btn-secondary btn-margin">View Budget</a>
+                        <a href="/budget" class="btn btn-secondary btn-margin">Build Budget</a>
+                        <a href="/edit" class="btn btn-secondary btn-margin">Edit Budget</a>
+                        <a href="/logout" class="btn btn-primary btn-margin">Log Out</a>
+                        <a href="/delete" class="btn btn-secondary btn-margin">Unsubscribe</a>
+                        <a href="/change-password" class="btn btn-secondary btn-margin">Change Password</a>
+                    {% else %}
+                        <a href="/login" class="btn btn-primary btn-margin">Login</a>
+                        <a href="/register" class="btn btn-secondary btn-margin">Register</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Creates and area for flash messages     -->
+    <section>
+        <main class="container">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert alert-info" role="alert">
+                        {% for message in messages %}
+                            {{ message }}
+                        {% endfor %}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            {% block content %}{% endblock %}
+        </main>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small>Designed by <a href="mailto:JLRDevDesigner@icloud.com">JLRDevDesigner@icloud.com</a> &copy; 2024. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    {% block scripts %}{% endblock %}
+</body>
+</html>

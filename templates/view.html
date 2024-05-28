@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+<!-- Sets up viewing of budget for the specified month -->
+{% block content %}
+<div class="container">
+    <h1>View Budget</h1>
+    <form id="filter-form" method="get" action="/view">
+        <div class="form-group">
+            <label for="month">Select Month:</label>
+            <select id="month" name="month" class="form-control">
+                {% for month in months %}
+                    <option value="{{ month }}" {% if month == selected_month %}selected{% endif %}>{{ month }}</option>
+                {% endfor %}
+            </select>
+            <button type="submit" class="btn btn-primary mt-2">Show Budget</button>
+        </div>
+    </form>
+
+    <button class="btn btn-secondary mb-3" onclick="window.print()">Print Budget</button>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in budget_data %}
+                <tr>
+                    <td>{{ item.description }}</td>
+                    <td>{{ "%.2f" | format(item.amount) }}</td>
+                    <td>{{ item.date }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2"><strong>Total:</strong></td>
+                <td>
+                    <strong class="{{ 'negative-amount' if total_sum < 0 else '' }}">
+                        {{ "%.2f" | format(total_sum) }}
+                    </strong>
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock %}
+
+<!-- Script to handle month selection -->
+{% block scripts %}
+<script>
+    document.getElementById('filter-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const month = document.getElementById('month').value;
+        this.submit();
+    });
+</script>
+{% endblock %}

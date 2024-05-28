@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Set up bootstrap and css styling, as well as overall page formatting -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JLRDevDesigns</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-bank' viewBox='0 0 16 16'><path d='m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.5.5 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5.5 0 0 1 .5 3h.89zM3.777 3h8.447L8 1zM2 6v7h1V6zm2 0v7h2.5V6zm3.5 0v7h1V6zm2 0v7H12V6zM13 6v7h1V6zm2-1V4H1v1zm-.39 9H1.39l-.25 1h13.72z'/></svg>">
+    <style>
+        .btn-margin {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center mt-5">
+                    <h1>Welcome to the Budget and Instagram Analysis App</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center mt-3">
+                    <a href="{{ url_for('index') }}" class="btn btn-primary">Go to Budget Helper</a>
+                    <a href="{{ url_for('upload_files') }}" class="btn btn-primary">Go to Instagram Follow Back</a>
+                    <a href="{{ url_for('resume') }}" class="btn btn-primary">View My Resume</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="container">
+        <div class="row">
+            <div class="col">
+                <h2 class="text-center mb-4">About Budget Helper</h2>
+                <p>Budget Helper is a web application designed to assist users in managing their finances by providing tools for creating, viewing, editing, and deleting monthly budget plans. The application leverages modern web technologies and adheres to best practices for security and usability.</p>
+                <h3>Summary of Budget Helper Features:</h3>
+                <ul>
+                    <li>User Registration and Authentication</li>
+                    <li>Password Management</li>
+                    <li>Budget Management</li>
+                    <li>Responsive Design</li>
+                    <li>Print Functionality</li>
+                </ul>
+                <p>For more details, visit the Budget Helper page.</p>
+                
+                <h2 class="text-center mb-4">About Instagram Follow Back</h2>
+                <p>Instagram Follow Back is an application designed to allow users to safely use data provided by Instagram to see if their followers are following them back. This concept is particularly useful for influencers seeking to analyze their follower engagement.</p>
+                <p>For more details, visit the Instagram Follow Back page.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h1 class="text-center mb-4">Jesse L. Reid - Python Developer & Full Stack Engineer</h1>
+                <p class="lead">Accomplished Python Developer and Full Stack Engineer with over six years of experience in satellite network operations, specialized in API development, network-wide software deployments, and creating comprehensive monitoring systems. Proven track record in developing and deploying scalable code, managing critical network infrastructure, and providing high-level technical support. Seeking to leverage deep technical expertise and a collaborative work ethic in a challenging Python/Full Stack Developer role.</p>
+                <p class="lead">Proficiencies:</p>
+                <ul>
+                    <li>Programming Languages: Python, JavaScript, HTML, Bash, SQL, C</li>
+                    <li>Frameworks/Libraries: React (Frontend development), Tabulator, FastAPI, Supervisor, Huey, Flask</li>
+                    <li>Systems: Linux, macOS, Windows</li>
+                    <li>Networks: iDirect modems, Cisco routers, PaloAlto, Sandvine, Salesforce</li>
+                    <li>Tools: SSH, TeamViewer, Remote Desktop, AnyDesk, PyCharm, Visual Studio, Virtual Box, VM Ware, Grafana, Kibana</li>
+                    <li>Databases: Experience with various database technologies</li>
+                    <li>Others: Expertise in software deployment, and maintenance coordination</li>
+                    <li>Ability to work in a team environment</li>
+                    <li>Strong communication and analytical skills</li>
+                </ul>
+            </div>
+        </div>
+        
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <small>Designed by <a href="mailto:JLRDevDesigner@icloud.com">JLRDevDesigner@icloud.com</a> &copy; 2024. All rights reserved.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

@@ -1,0 +1,31 @@
+{% extends "insta_layout.html" %}
+
+{% block content %}
+    <div class="instructions">
+        <h2>Instructions for Uploading Instagram Data:</h2>
+        <ol>
+            <li>Log into Instagram and go to your profile page.</li>
+            <li>Select the three bars in the upper right corner.</li>
+            <li>Select "Your activity".</li>
+            <li>Select "Download your information".</li>
+            <li>Select "Download or transfer information".</li>
+            <li>Select your account.</li>
+            <li>Select "Some of your information".</li>
+            <li>Select "Followers and following".</li>
+            <li>Select "Download to device".</li>
+            <li>Select date range "All time".</li>
+            <li>Select Format "JSON".</li>
+            <li>Select "Create files".</li>
+            <li>When you get notified that your file is ready, go back to the "Download your information" page and download your zip file.</li>
+            <li>Upload your zip file to this page.</li>
+        </ol>
+    </div>
+
+    <h1>Upload your Instagram Data</h1>
+    <form action="{{ url_for('upload_files') }}" method="post" enctype="multipart/form-data">
+        <input type="file" name="zip_file">
+        <input type="submit" value="Upload">
+    </form>
+    <!-- Add spacing -->
+    <div class="mb-5"></div>
+{% endblock %}

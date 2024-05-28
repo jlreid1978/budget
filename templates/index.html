@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+<!-- Greeting menu which adds fields after a user is logged in -->
+{% block content %}
+    {% if logged_in %}
+        <div class="container text-center mt-5">
+            <h1>Hello {{ (name) }}</h1>
+            <h1>Welcome to Budget Helper!</h1>
+            <p>Would you like to:</p>
+            <p><a href="{{ url_for('build_budget') }}">Build your budget</a></br>
+            <a href="{{ url_for('view_budget') }}">View your budget</a></p>
+        </div>
+    {% else %}
+        <h1>Welcome to Budget Helper!</h1>
+        <p>Please register or login above.</p>
+    {% endif %}
+    
+    <!-- If user is an admin, populates form to reset a user's password -->
+    {% if is_admin %}
+    <div class="container">
+        <form method="POST" action="{{ url_for('reset_password') }}">
+            <div class="form-group">
+                <label for="reset_username">Reset User's Password</label>
+                <input type="text" class="form-control" id="reset_username" name="reset_username">
+                <small id="resetHelp" class="form-text text-muted">Enter the username to reset their password to default.</small>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    {% endif %}
+    
+{% endblock %}

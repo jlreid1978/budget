@@ -1,0 +1,43 @@
+{
+  "relationships_dismissed_suggested_users": [
+    {
+      "title": "",
+      "media_list_data": [
+        
+      ],
+      "string_list_data": [
+        {
+          "href": "https://www.instagram.com/el_jefe0163",
+          "value": "el_jefe0163",
+          "timestamp": 1689534843
+        }
+      ]
+    },
+    {
+      "title": "",
+      "media_list_data": [
+        
+      ],
+      "string_list_data": [
+        {
+          "href": "https://www.instagram.com/yusmumin",
+          "value": "yusmumin",
+          "timestamp": 1669300393
+        }
+      ]
+    },
+    {
+      "title": "",
+      "media_list_data": [
+        
+      ],
+      "string_list_data": [
+        {
+          "href": "https://www.instagram.com/pugar91",
+          "value": "pugar91",
+          "timestamp": 1662483344
+        }
+      ]
+    }
+  ]
+}

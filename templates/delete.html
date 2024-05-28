@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+<!-- Confirmation page for account deletion -->
+{% block content %}
+    <div class="container">
+        <h2>Confirm Account Deletion</h2>
+        <p>Are you sure you want to delete your account?</p>
+        <form method="post" action="{{ url_for('delete') }}">
+            <button type="submit" class="btn btn-danger">Delete Account</button>
+            <a href="{{ url_for('index') }}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+{% endblock %}
